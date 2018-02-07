@@ -1,0 +1,6 @@
+D:\C#_projekty\Szachy\Basic\bin\Debug\Basic.dll
+D:\C#_projekty\Szachy\Basic\bin\Debug\Basic.pdb
+D:\C#_projekty\Szachy\Basic\obj\Debug\Basic.csprojResolveAssemblyReference.cache
+D:\C#_projekty\Szachy\Basic\obj\Debug\Basic.csproj.CoreCompileInputs.cache
+D:\C#_projekty\Szachy\Basic\obj\Debug\Basic.dll
+D:\C#_projekty\Szachy\Basic\obj\Debug\Basic.pdb

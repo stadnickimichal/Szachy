@@ -1,0 +1,12 @@
+D:\C#_projekty\Szachy\Szachy\bin\Debug\Szachy.exe.config
+D:\C#_projekty\Szachy\Szachy\bin\Debug\Szachy.exe
+D:\C#_projekty\Szachy\Szachy\bin\Debug\Szachy.pdb
+D:\C#_projekty\Szachy\Szachy\bin\Debug\Basic.dll
+D:\C#_projekty\Szachy\Szachy\bin\Debug\Basic.pdb
+D:\C#_projekty\Szachy\Szachy\obj\Debug\Chess.csprojResolveAssemblyReference.cache
+D:\C#_projekty\Szachy\Szachy\obj\Debug\Szachy.Main.resources
+D:\C#_projekty\Szachy\Szachy\obj\Debug\Szachy.Properties.Resources.resources
+D:\C#_projekty\Szachy\Szachy\obj\Debug\Chess.csproj.GenerateResource.Cache
+D:\C#_projekty\Szachy\Szachy\obj\Debug\Chess.csproj.CoreCompileInputs.cache
+D:\C#_projekty\Szachy\Szachy\obj\Debug\Szachy.exe
+D:\C#_projekty\Szachy\Szachy\obj\Debug\Szachy.pdb
