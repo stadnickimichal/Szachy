@@ -45,6 +45,12 @@
     <Compile Include="Board.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Fieldv2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Fieldv2.Designer.cs">
+      <DependentUpon>Fieldv2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fild.cs" />
     <Compile Include="IBoard.cs" />
     <Compile Include="IField.cs" />

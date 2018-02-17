@@ -11,13 +11,13 @@ namespace Basic
     {
         private const int Height = 60;
         private const int Width = 60;
-        public int PositionX { get; private set; }
-        public int PositionY { get; private set; }
+        public int PositionX { get; protected set; }
+        public int PositionY { get; protected set; }
         private Rectangle Squer;
-        public virtual IFigure Figure { get; protected set; }
+        public virtual IFigure Figure { get; protected set; } //TO DO: sprawdzic czy potrzebne przy optymalizacji
 
-        public Color? FieldColor { get; set; }
-        public Image FieldImage { get; set; }
+        public Color? FieldColor { get; protected set; }
+        public Bitmap FieldImage { get; protected set; }
 
         public Field(int X, int Y)
         {
@@ -39,7 +39,7 @@ namespace Basic
             g.FillRectangle(br, Squer);
             FieldColor = color;
         }
-        public virtual void Draw(Graphics g)
+        public virtual void Draw(Graphics g)//TO DO: sprawdzic czy potrzebe
         {
             if (FieldColor == null)
             {
@@ -53,29 +53,26 @@ namespace Basic
         }
         public virtual void Clear(Graphics g)
         {
-            Brush br = new SolidBrush(Color.White);
+            Brush br = new SolidBrush(FieldColor.Value);
             g.FillRectangle(br, Squer);
-            FieldColor = Color.White;
-
-            if (FieldColor != null)
-                FieldColor = null;
-
+            
             if (FieldImage != null)
                 FieldImage = null;
         }
-        public virtual void DrawImage(Graphics g, Image image)
+        public virtual void DrawImage(Graphics g, Bitmap image)
         {
-            int imgUpperLeftCornerX = (Width - image.Width)/2;
-            int imgUpperLeftCornerY = (Height - image.Height)/ 2;
-            Rectangle srcRect = new Rectangle(imgUpperLeftCornerX, imgUpperLeftCornerY, image.Width, image.Height);
-            g.DrawImage(image, Squer, srcRect, GraphicsUnit.Pixel);
+            FieldImage = image;
+            int imgUpperLeftCornerX = (Width - FieldImage.Width)/2;
+            int imgUpperLeftCornerY = (Height - FieldImage.Height)/ 2;
+            Rectangle srcRect = new Rectangle(imgUpperLeftCornerX, imgUpperLeftCornerY, FieldImage.Width, FieldImage.Height);
+            g.DrawImage(FieldImage, Squer);
         }
-        public virtual void DrawImage(Graphics g)
+        public virtual void DrawImage(Graphics g)//TO DO: sprawdzic czy potrzebe
         {
             int imgUpperLeftCornerX = (Width - FieldImage.Width) / 2;
             int imgUpperLeftCornerY = (Height - FieldImage.Height) / 2;
             Rectangle srcRect = new Rectangle(imgUpperLeftCornerX, imgUpperLeftCornerY, FieldImage.Width, FieldImage.Height);
-            g.DrawImage(FieldImage, Squer, srcRect, GraphicsUnit.Pixel);
+            g.DrawImage(FieldImage, Squer);
         }
         public virtual void Refresh(Graphics g)
         {

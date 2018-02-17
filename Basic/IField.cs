@@ -20,7 +20,7 @@ namespace Basic
         //koloruje pole kolorem ze zmiennej FieldColor
         void Draw(Graphics g);
         //koloruje pole na bialo i restartuje img oraz kolor
-        void DrawImage(Graphics g, Image figure);
+        void DrawImage(Graphics g, Bitmap figure);
         //wrysowywuje w pole obrazek (wysrodkowany)
         void DrawImage(Graphics g);
         //wrysowywuje w pole obrazek (wysrodkowany) ze zmienne FieldImage

@@ -19,6 +19,7 @@ namespace Chess
         public Main()
         {
             InitializeComponent();
+            Board.RefreshNet();
         }
 
         private void InitializeComponent()

@@ -4,15 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Basic;
+using Szachy.Figures;
 
 namespace Chess
 {
     class Chessboard : Board
     {
-        public Chessboard()
-            :base(8, 8)
-        {
+        //figury:
+        Pawn[] WhitePawns, BlacKPawns;
 
+        public Chessboard()
+            :base(8, 8)//przy wywolywaniu konstruktora klasy bazowej w ktorym uzywam metody ktora nastepnie nadpisuje w kasie pochodnej, wywoywana jest moedota z klasy pochodnej
+        {
+            InitFigures();
+            DeployFigures();
         }
 
         protected override void CreateNet(int Widht, int Height)
@@ -33,6 +38,31 @@ namespace Chess
                 White = !White;
                 rank++;
                 field = 65;
+            }
+        }
+
+        private void DeployFigures()
+        {
+            for(int i = 0; i < 8; i++)
+            {
+                (Net[i, 1] as Square).SetFigure(g, WhitePawns[i]);
+                (Net[i, 1] as Square).SetFigure(g, BlacKPawns[i]);
+            }
+        }
+
+        private void InitFigures()
+        {
+            InitPawns();
+        }
+
+        private void InitPawns()
+        {
+            WhitePawns = new Pawn[8];
+            BlacKPawns = new Pawn[8];
+            for (int i=0; i<8; i++)
+            {
+                WhitePawns[i] = new Pawn(i, 1, true);
+                BlacKPawns[i] = new Pawn(i, 1, false);
             }
         }
     }

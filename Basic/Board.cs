@@ -72,7 +72,7 @@ namespace Basic
             }
         }
 
-        public virtual void DrawImageOnNetElement(int X, int Y, Image img)//wrysowuje obrazek w element siatki
+        public virtual void DrawImageOnNetElement(int X, int Y, Bitmap img)//wrysowuje obrazek w element siatki
         {
             Net[X, Y].DrawImage(g,img);
         }
@@ -84,7 +84,7 @@ namespace Basic
 
         private void Board_OnPaint(object sender, PaintEventArgs e)
         {
-            DrawNet();
+            RefreshNet();
         }
     }
 }

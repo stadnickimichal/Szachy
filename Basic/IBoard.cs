@@ -17,7 +17,7 @@ namespace Basic
 
         void DrawOnNetElement(int X, int Y, Color color);
 
-        void DrawImageOnNetElement(int X, int Y, Image img);
+        void DrawImageOnNetElement(int X, int Y, Bitmap img);
 
         void ClearNet();
 

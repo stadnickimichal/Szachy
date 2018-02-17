@@ -17,13 +17,13 @@ namespace Szachy.Figures
 
         protected Dictionary<ChessFigures, string> ChessFigureImg = new Dictionary<ChessFigures, string>()
         {
-            {ChessFigures.WhitePawn, @"..\source\PawnWhite.png" },
+            {ChessFigures.WhitePawn, @"D:\C#_projekty\Szachy\Szachy\source\WhitePawn.png" },
             {ChessFigures.WhiteKnight, @"..\source\KnightWhite.png" },
             {ChessFigures.WhiteRook, @"..\source\RookWhite.png" },
             {ChessFigures.WhiteBishop, @"..\source\BishopWhite.png" },
             {ChessFigures.WhiteQueen, @"..\source\QueenWhite.png" },
             {ChessFigures.WhiteKing, @"..\source\KingWhite.png" },
-            {ChessFigures.BlackPawn, "" },
+            {ChessFigures.BlackPawn, @"D:\C#_projekty\Szachy\Szachy\source\BlackPawn.png" },
             {ChessFigures.BlackKnight, "" },
             {ChessFigures.BlackRook, "" },
             {ChessFigures.BlackBishop, "" },

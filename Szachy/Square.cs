@@ -22,7 +22,7 @@ namespace Chess
             File = file;
             Rank = Rank;
             FlagIsWhite = isWhite;
-            FieldColor = (FlagIsWhite) ? Color.White : Color.Black;
+            FieldColor = (FlagIsWhite) ? Color.White : Color.FromArgb(153, 102, 51);
         }
 
         public Square(int X, int Y, bool isWhite, int file, int rank) : base(X, Y)
@@ -53,7 +53,8 @@ namespace Chess
         {
             Figure = figure;
             string URL = figure.URLToFigureImage;
-            Image img = new Bitmap(URL);
+            Bitmap img = new Bitmap(URL);
+            img.MakeTransparent(Color.White);
             DrawImage(g, img);
         }
     }
