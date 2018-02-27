@@ -1,0 +1,8 @@
+D:\C#_projekty\Szachy\GUITest\bin\Debug\GUITest.exe.config
+D:\C#_projekty\Szachy\GUITest\bin\Debug\GUITest.exe
+D:\C#_projekty\Szachy\GUITest\bin\Debug\GUITest.pdb
+D:\C#_projekty\Szachy\GUITest\obj\Debug\GUITest.Properties.Resources.resources
+D:\C#_projekty\Szachy\GUITest\obj\Debug\GUITest.csproj.GenerateResource.Cache
+D:\C#_projekty\Szachy\GUITest\obj\Debug\GUITest.csproj.CoreCompileInputs.cache
+D:\C#_projekty\Szachy\GUITest\obj\Debug\GUITest.exe
+D:\C#_projekty\Szachy\GUITest\obj\Debug\GUITest.pdb

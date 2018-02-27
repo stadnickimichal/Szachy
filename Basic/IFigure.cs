@@ -18,6 +18,9 @@ namespace Basic
         bool ValidateMove(IField field);
         //pozycja figury
         Point Position { get; set; }
+        //typ figury
+        FiguresTypes FigureType { get; set; }
         //TODO prop z graczem i do ValidateMove sprawdzenie zgodnosci z graczem
+        IPlayer Owner { get; set; }
     }
 }

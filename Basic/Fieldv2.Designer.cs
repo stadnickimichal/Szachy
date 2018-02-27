@@ -19,19 +19,5 @@
             }
             base.Dispose(disposing);
         }
-
-        #region Kod wygenerowany przez Projektanta składników
-
-        /// <summary> 
-        /// Metoda wymagana do obsługi projektanta — nie należy modyfikować 
-        /// jej zawartości w edytorze kodu.
-        /// </summary>
-        private void InitializeComponent()
-        {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        }
-
-        #endregion
     }
 }

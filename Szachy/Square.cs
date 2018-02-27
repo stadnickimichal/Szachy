@@ -10,12 +10,11 @@ using Szachy.Figures;
 namespace Chess
 {
 
-    class Square : Field
+    class Square : Fieldv2
     {
         public char File { get; set; }
         public int Rank { get; set; }
         private bool FlagIsWhite;
-        //public override IFigure Figure { get; protected set; }
 
         public Square(int X, int Y, bool isWhite, char file, int rank):base(X, Y)
         {
@@ -23,6 +22,7 @@ namespace Chess
             Rank = Rank;
             FlagIsWhite = isWhite;
             FieldColor = (FlagIsWhite) ? Color.White : Color.FromArgb(153, 102, 51);
+            BackColor = FieldColor.Value;
         }
 
         public Square(int X, int Y, bool isWhite, int file, int rank) : base(X, Y)
@@ -39,23 +39,8 @@ namespace Chess
             }
             Rank = Rank;
             FlagIsWhite = isWhite;
-            FieldColor = (FlagIsWhite) ? Color.White : Color.Black;
-        }
-        
-        public override void Clear(Graphics g)//nie zmienia koloru pola tylko usuwa z niego figure
-        {
-            Figure = null;
-            FieldImage = null;
-            Draw(g);
-        }
-
-        public void SetFigure(Graphics g, IFigure figure)//ustawia figure na polu i wrysowywuje ja
-        {
-            Figure = figure;
-            string URL = figure.URLToFigureImage;
-            Bitmap img = new Bitmap(URL);
-            img.MakeTransparent(Color.White);
-            DrawImage(g, img);
+            FieldColor = (FlagIsWhite) ? Color.White : Color.FromArgb(153, 102, 51);
+            BackColor = FieldColor.Value;
         }
     }
 }

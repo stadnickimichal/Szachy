@@ -14,9 +14,9 @@ namespace Szachy.Figures
        
         bool FirstMove;
 
-        public Pawn(int X, int Y, bool isWhite) :base(X,Y)
+        public Pawn(int X, int Y, FiguresTypes type, ChessPlayer owner, bool isWhite) :base(X,Y, type, owner)
         {
-            FigureType = (isWhite) ? ChessFigures.WhitePawn : ChessFigures.BlackPawn;
+            FigureType = (isWhite) ? FiguresTypes.WhitePawn : FiguresTypes.BlackPawn;
             Name = "Pawn";
             URLToFigureImage = ChessFigureImg[FigureType];
             FirstMove = true;
@@ -40,10 +40,29 @@ namespace Szachy.Figures
             return true;
         }
 
-        private bool MoveForwardCheckCorrectnes(int DestinityY, int PassibleMoveForward) =>
-            ((DestinityY - Position.Y <= PassibleMoveForward) && (DestinityY - Position.Y > 0));
+        private bool MoveForwardCheckCorrectnes(int DestinityY, int PassibleMoveForward)
+        {
+            if ((FigureType == FiguresTypes.WhitePawn) && (DestinityY - Position.Y <= PassibleMoveForward) && (DestinityY - Position.Y >= 0))
+                return true;
 
-        private bool SidewaysMovementsCheckCorrectnes(IField field) =>
-            ((field.Figure != null) && (field.PositionX - Position.X == 1 || field.PositionX - Position.X == -1) && (field.PositionY - Position.Y == 1));
+            if ((FigureType == FiguresTypes.BlackPawn) && (Position.Y - DestinityY <= PassibleMoveForward) && (Position.Y - DestinityY >= 0))
+                return true;
+
+            return false;
+        }
+
+        private bool SidewaysMovementsCheckCorrectnes(IField field)
+        {
+            if (!(field.PositionX - Position.X == 1 || field.PositionX - Position.X == -1))//jesli nie zachodzi ruch na boki to zwraca true
+                return true;
+
+            if (FigureType == FiguresTypes.WhitePawn && (field.Figure != null) && (field.PositionY - Position.Y == 1))
+                    return true;
+
+            if (FigureType == FiguresTypes.BlackPawn && (field.Figure != null) && (Position.Y - field.PositionY == 1))
+                    return true;
+
+            return false;
+        }
     }
 }

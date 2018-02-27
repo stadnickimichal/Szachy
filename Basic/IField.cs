@@ -15,17 +15,11 @@ namespace Basic
         int PositionY { get; }
         //zwraca informacje czy na polu znajduje sie obecnie figura, jesli tak to jaka
         IFigure Figure { get; }
-        //koloruje pole zadanym kolorem
-        void Draw(Graphics g, Color color);
-        //koloruje pole kolorem ze zmiennej FieldColor
-        void Draw(Graphics g);
         //koloruje pole na bialo i restartuje img oraz kolor
-        void DrawImage(Graphics g, Bitmap figure);
-        //wrysowywuje w pole obrazek (wysrodkowany)
-        void DrawImage(Graphics g);
+        void DrawImage(IFigure figure);
         //wrysowywuje w pole obrazek (wysrodkowany) ze zmienne FieldImage
-        void Clear(Graphics g);
-        //odswierza pole
-        void Refresh(Graphics g);
+        void Clear();
+        //odswierzenie, moze byc zaimplementowane poprzez funkcje z kontrolki
+        void Refresh();
     }
 }

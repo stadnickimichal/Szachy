@@ -10,35 +10,41 @@ namespace Szachy.Figures
 {
     abstract class FigureAbstract : IFigure
     {
-        public FigureAbstract(int X, int Y)
+        public FigureAbstract(int X, int Y, FiguresTypes type, IPlayer owner)
         {
             Position = new Point(X, Y);
+            FigureType = type;
+            Owner = owner;
         }
 
-        protected Dictionary<ChessFigures, string> ChessFigureImg = new Dictionary<ChessFigures, string>()
+        protected Dictionary<FiguresTypes, string> ChessFigureImg = new Dictionary<FiguresTypes, string>()
         {
-            {ChessFigures.WhitePawn, @"D:\C#_projekty\Szachy\Szachy\source\WhitePawn.png" },
-            {ChessFigures.WhiteKnight, @"..\source\KnightWhite.png" },
-            {ChessFigures.WhiteRook, @"..\source\RookWhite.png" },
-            {ChessFigures.WhiteBishop, @"..\source\BishopWhite.png" },
-            {ChessFigures.WhiteQueen, @"..\source\QueenWhite.png" },
-            {ChessFigures.WhiteKing, @"..\source\KingWhite.png" },
-            {ChessFigures.BlackPawn, @"D:\C#_projekty\Szachy\Szachy\source\BlackPawn.png" },
-            {ChessFigures.BlackKnight, "" },
-            {ChessFigures.BlackRook, "" },
-            {ChessFigures.BlackBishop, "" },
-            {ChessFigures.BlackQueen, "" },
-            {ChessFigures.BlackKing, "" },
+            {FiguresTypes.WhitePawn, @"D:\C#_projekty\Szachy\Szachy\source\WhitePawn.png" },
+            {FiguresTypes.WhiteKnight, @"D:\C#_projekty\Szachy\Szachy\source\WhitePawn.png" },
+            {FiguresTypes.WhiteRook, @"..\source\RookWhite.png" },
+            {FiguresTypes.WhiteBishop, @"..\source\BishopWhite.png" },
+            {FiguresTypes.WhiteQueen, @"..\source\QueenWhite.png" },
+            {FiguresTypes.WhiteKing, @"..\source\KingWhite.png" },
+            {FiguresTypes.BlackPawn, @"D:\C#_projekty\Szachy\Szachy\source\BlackPawn.png" },
+            {FiguresTypes.BlackKnight, "" },
+            {FiguresTypes.BlackRook, "" },
+            {FiguresTypes.BlackBishop, "" },
+            {FiguresTypes.BlackQueen, "" },
+            {FiguresTypes.BlackKing, "" },
         };
-
+        
+#region implementation of IFigure
         public string URLToFigureImage { get; protected set; }
 
         public string Name { get; protected set; }
 
         public Point Position { get; set; }
 
-        public ChessFigures FigureType;
-
         public abstract bool ValidateMove(IField field);
+
+        public FiguresTypes FigureType { get; set; }
+
+        public IPlayer Owner { get; set; }
+        #endregion
     }
 }

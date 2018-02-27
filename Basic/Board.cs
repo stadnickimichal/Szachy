@@ -11,7 +11,6 @@ namespace Basic
     public class Board : Panel, IBoard
     {
         public IField[,] Net { get; set; }
-        public Graphics g { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
 
@@ -22,30 +21,20 @@ namespace Basic
             X = Widht;
             Y = Height;
             CreateNet(X, Y);
-            g = CreateGraphics();
             Paint += Board_OnPaint;
         }
 
         protected virtual void CreateNet(int Widht, int Height )//tworzy siatke
         {
-            Net = new Field[Widht, Height];
+            Net = new Fieldv2[Widht, Height];
 
             for (int i = 0; i < Widht; i++)
             {
                 for (int j = 0; j < Height; j++)
                 {
-                    Net[i, j] = new Field(i, j);
-                }
-            }
-        }
-
-        public virtual void DrawNet()
-        {
-            for (int i = 0; i < Y; i++)
-            {
-                for (int j = 0; j < X; j++)
-                {
-                    Net[i, j].Draw(g);
+                    Fieldv2 field = new Fieldv2(i, j);
+                    Net[i, j] = field;
+                    Controls.Add(field);
                 }
             }
         }
@@ -56,7 +45,7 @@ namespace Basic
             {
                 for (int j = 0; j < Y; j++)
                 {
-                    Net[i, j].Refresh(g);
+                    Net[i, j].Refresh();
                 }
             }
         }
@@ -67,21 +56,10 @@ namespace Basic
             {
                 for (int j = 0; j < Y; j++)
                 {
-                    Net[i, j].Clear(g);
+                    Net[i, j].Clear();
                 }
             }
         }
-
-        public virtual void DrawImageOnNetElement(int X, int Y, Bitmap img)//wrysowuje obrazek w element siatki
-        {
-            Net[X, Y].DrawImage(g,img);
-        }
-
-        public virtual void DrawOnNetElement(int X, int Y, Color color)//koloruje element siatki
-        {
-            Net[X, Y].Draw(g, color);
-        }
-
         private void Board_OnPaint(object sender, PaintEventArgs e)
         {
             RefreshNet();

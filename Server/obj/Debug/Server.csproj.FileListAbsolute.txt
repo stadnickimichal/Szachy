@@ -1,0 +1,9 @@
+D:\C#_projekty\Szachy\Server\bin\Debug\Server.exe.config
+D:\C#_projekty\Szachy\Server\bin\Debug\Server.exe
+D:\C#_projekty\Szachy\Server\bin\Debug\Server.pdb
+D:\C#_projekty\Szachy\Server\obj\Debug\Server.csprojResolveAssemblyReference.cache
+D:\C#_projekty\Szachy\Server\obj\Debug\Server.Properties.Resources.resources
+D:\C#_projekty\Szachy\Server\obj\Debug\Server.csproj.GenerateResource.Cache
+D:\C#_projekty\Szachy\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\C#_projekty\Szachy\Server\obj\Debug\Server.exe
+D:\C#_projekty\Szachy\Server\obj\Debug\Server.pdb

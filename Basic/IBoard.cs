@@ -11,14 +11,6 @@ namespace Basic
     {
         IField[,] Net { get; set; }
 
-        Graphics g { get; set; }
-
-        void DrawNet();
-
-        void DrawOnNetElement(int X, int Y, Color color);
-
-        void DrawImageOnNetElement(int X, int Y, Bitmap img);
-
         void ClearNet();
 
         void RefreshNet();

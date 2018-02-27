@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Basic
 {
-    public class Field : IField
+    public class Field
     {
         private const int Height = 60;
         private const int Width = 60;
