@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 
 namespace Server
 {
-    class Listener
+    internal delegate void PlayerAcceptedDelegate(Player player);
+
+    class Listener : IDisposable
     {
         public Socket ListiningSocket { get; set; }
+        public event PlayerAcceptedDelegate onPlayerAccepted;
 
         public Listener()
         {
@@ -33,7 +36,7 @@ namespace Server
                 {
                     ListiningSocket.Listen(0);
                     Socket sck = ListiningSocket.Accept();
-                    new Thread(AcceptConnection).Start(sck);
+                    AcceptConnection(sck);// ewentualnie mozna uruchomic w nowym watku
                 }
                 catch(Exception ex)
                 {
@@ -42,26 +45,16 @@ namespace Server
             }
         }
 
-        private void AcceptConnection(object socket)
+        private void AcceptConnection(Socket socket)
         {
-            byte[] buffer = new byte[1024];
-            try
-            {
-                Socket sck = (Socket)socket;
-                EndPoint clientEndPoint = sck.RemoteEndPoint;
-                string endpoint = clientEndPoint.ToString();
-                string str = string.Empty;
-                while (true)
-                { 
-                    int a = sck.Receive(buffer, 0, buffer.Length, 0);
-                    Console.WriteLine("Połączony!");
-                    str = Encoding.ASCII.GetString(buffer, 0, a);
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Problem with reciving data from client.\n" + ex.StackTrace);
-            }
+            Player player = new Player(socket, socket.LocalEndPoint);
+            onPlayerAccepted(player);
+        }
+
+        public void Dispose()
+        {
+            ListiningSocket.Close();
+            ListiningSocket.Dispose();
         }
     }
 }
