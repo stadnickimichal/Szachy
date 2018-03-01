@@ -8,6 +8,13 @@ using System.Threading.Tasks;
 
 namespace Server.Interface
 {
+    //enum reprezentujacy stany w jakich moze znajdowac sie user
+    public enum UserStates
+    {
+        Connected,
+        Playing
+    }
+
     internal interface IUser
     {
         // nazwa uzytkownika

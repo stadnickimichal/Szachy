@@ -31,9 +31,10 @@ namespace Server
             listenet = new Listener();
             ListeningThread = new Thread(listenet.StartListening);
             listenet.onPlayerAccepted += AddNewPlayer;
+            FormClosing += Form1_FormClosing1;
         }
 
-        void SendData(Player player)
+        private void SendData(Player player)
         {
             string dataToSend = TextBoxSend.Text;
 
@@ -132,6 +133,16 @@ namespace Server
         {
             string selectedUser = UsersList.SelectedItem.ToString();
             SendData(PlayersList[selectedUser]);
+        }
+
+        private void Form1_FormClosing1(object sender, FormClosingEventArgs e)
+        {
+            listenet.Dispose();
+
+            foreach(var plyers in PlayersList)
+            {
+                plyers.Value.Dispose();
+            }
         }
         #endregion
     }

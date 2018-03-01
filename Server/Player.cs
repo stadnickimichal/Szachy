@@ -20,6 +20,7 @@ namespace Server
         public Thread PlayerThread { get; private set; }
         public event RecivedDataDelegate onRecivedData;
         public event DisconectedDelegate onDisconected;
+        public UserStates state { get; private set; }
 
         private Socket socket;
 
@@ -34,6 +35,7 @@ namespace Server
 
             PlayerThread = new Thread(ReciveDateFromPlayer);
             PlayerThread.Start();
+            state = UserStates.Connected;
         }
 
         public void SendDataToPlayer(string dataToSend)
@@ -44,7 +46,7 @@ namespace Server
 
         public override string ToString()
         {
-            return Name;
+            return Name + " : " +  state.ToString();
         }
 
         public void Dispose()
