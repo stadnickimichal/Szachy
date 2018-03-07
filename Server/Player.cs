@@ -78,7 +78,7 @@ namespace Server
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("Error While reciving data from user. StacTrace:\n" + ex.StackTrace);
+                        Console.WriteLine("Error while reciving data from user. StacTrace:\n" + ex.StackTrace);
                     }
                 } while (dataRecivedLength == buffer.Length);
 

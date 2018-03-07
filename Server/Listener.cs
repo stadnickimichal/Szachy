@@ -47,7 +47,7 @@ namespace Server
 
         private void AcceptConnection(Socket socket)
         {
-            Player player = new Player(socket, socket.LocalEndPoint);
+            Player player = new Player(socket, socket.RemoteEndPoint);
             onPlayerAccepted(player);
         }
 

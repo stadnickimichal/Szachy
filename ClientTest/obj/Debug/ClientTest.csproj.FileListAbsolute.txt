@@ -1,0 +1,9 @@
+D:\C#_projekty\Szachy\ClientTest\bin\Debug\ClientTest.exe.config
+D:\C#_projekty\Szachy\ClientTest\bin\Debug\ClientTest.exe
+D:\C#_projekty\Szachy\ClientTest\bin\Debug\ClientTest.pdb
+D:\C#_projekty\Szachy\ClientTest\obj\Debug\ClientTest.csprojResolveAssemblyReference.cache
+D:\C#_projekty\Szachy\ClientTest\obj\Debug\ClientTest.Properties.Resources.resources
+D:\C#_projekty\Szachy\ClientTest\obj\Debug\ClientTest.csproj.GenerateResource.Cache
+D:\C#_projekty\Szachy\ClientTest\obj\Debug\ClientTest.csproj.CoreCompileInputs.cache
+D:\C#_projekty\Szachy\ClientTest\obj\Debug\ClientTest.exe
+D:\C#_projekty\Szachy\ClientTest\obj\Debug\ClientTest.pdb
